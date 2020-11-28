@@ -1,5 +1,6 @@
 src/python/src/datasets/
 src/python/src/notebooks/
+src/python/src/encodings/
 .idea
 customer_churn.iml
 .DS_Store

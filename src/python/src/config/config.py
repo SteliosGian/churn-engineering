@@ -2,9 +2,9 @@
 ######### Preprocessing Config #########
 ########################################
 
-ENCODINGS_PATH = 'src/python/src/encodings'
+ENCODINGS_PATH = 'src/encodings'
 
-DATASET_PATH = 'src/python/src/datasets'
+DATASET_PATH = 'datasets/telco_churn.csv'
 
 FEATURES = ['gender', 'SeniorCitizen', 'Partner', 'Dependents',
             'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
@@ -12,17 +12,21 @@ FEATURES = ['gender', 'SeniorCitizen', 'Partner', 'Dependents',
             'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
             'PaymentMethod', 'MonthlyCharges', 'TotalCharges']
 
-CAT_VARS = ['MultipleLines',
-            'InternetService',
-            'OnlineSecurity',
-            'OnlineBackup',
-            'DeviceProtection',
-            'TechSupport',
-            'StreamingTV',
-            'StreamingMovies',
-            'Contract',
-            'PaymentMethod']
+CAT_VARS = ['gender', 'SeniorCitizen', 'Partner', 'Dependents',
+                    'PhoneService', 'MultipleLines', 'InternetService',
+                    'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+                    'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+                    'PaymentMethod']
 
 NUMERICAL_VARS = ['tenure', 'MonthlyCharges', 'TotalCharges']
 
 TARGET = 'Churn'
+
+########################################
+############# Train Config #############
+########################################
+
+
+########################################
+############# Predict Config ###########
+########################################
