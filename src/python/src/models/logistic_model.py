@@ -1,5 +1,6 @@
 from models.abstract_model import BaseModel
 from sklearn.linear_model import LogisticRegression
+import pickle
 
 
 class LogisticModel(BaseModel):
@@ -15,6 +16,9 @@ class LogisticModel(BaseModel):
     def predict(self, x):
         preds = self.model.predict(x)
         return preds
+
+    def save_model(self, path):
+        pickle.dump(self.model, open(f'{path}model', 'wb'))
 
 
 

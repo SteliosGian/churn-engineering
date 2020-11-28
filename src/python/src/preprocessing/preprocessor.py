@@ -51,18 +51,35 @@ def load_and_invert_transform_encoder(df: pd.DataFrame, cat_cols: list, encoding
 
 
 def convert_empty_lines_to_na(df: pd.DataFrame, cols: list) -> pd.DataFrame:
+    """
+    Convert empty lines (e.g. ' ') to NaN
+    :param df: Dataframe
+    :param cols: List of columns
+    :return: Converted dataframe
+    """
     df = df.copy()
     df[cols] = np.where(df[cols] == " ", np.nan, df[cols]).astype(float)
     return df
 
 
 def remove_na(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove NA values
+    :param df: Dataframe
+    :return: A dataframe without NAs
+    """
     df = df.copy()
     df = df.dropna()
     return df
 
 
 def encode_target(df: pd.DataFrame, target: str) -> pd.DataFrame:
+    """
+    Encode the target variable to True/False
+    :param df: Dataframe
+    :param target: Target variable
+    :return: Dataframe with converted target variable
+    """
     df = df.copy()
     df[target] = np.where(df[target] == 'Yes', True, False)
     return df

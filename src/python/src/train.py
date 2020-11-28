@@ -21,9 +21,10 @@ def training_pipeline(path):
 
 def run_training(opts):
     df = training_pipeline(opts.source)
-    lr = LogisticModel()
+    lr = LogisticModel(max_iter=1000)
     lr.fit(df[config.FEATURES], df[config.TARGET])
-    preds = lr.predict(df[config.FEATURES])
+    lr.save_model(opts.destination)
+
 
 
 if __name__ == '__main__':

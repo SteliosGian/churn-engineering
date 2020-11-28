@@ -17,3 +17,7 @@ class BaseModel(ABC):
     @abstractmethod
     def predict(self, x):
         raise NotImplementedError()
+
+    @abstractmethod
+    def save_model(self, path):
+        raise NotImplementedError()
