@@ -13,5 +13,10 @@ def read_dataset(path: str):
 
 
 def load_model(path: str):
+    """
+    Load serialized model
+    :param path: Model path
+    :return: Model instance
+    """
     model = pickle.load(open(f'{path}', 'rb'))
     return model

@@ -26,7 +26,6 @@ def run_training(opts):
     lr.save_model(opts.destination)
 
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Training phase', prog='train', usage='%(prog) [options]')
     parser.add_argument('--source', required=True, type=str, help="Source path of the training dataset")

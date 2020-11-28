@@ -3,5 +3,6 @@ src/python/src/notebooks/
 src/python/src/encodings/
 src/python/src/trained_models/
 .idea
+*.pyc
 customer_churn.iml
 .DS_Store
