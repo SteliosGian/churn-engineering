@@ -4,7 +4,6 @@ src/python/src/encodings/
 src/python/src/trained_models/
 .idea
 *.pyc
-.cache
-.pytest_cache
+src/python/.cache
 customer_churn.iml
 .DS_Store
