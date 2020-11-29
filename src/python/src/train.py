@@ -3,6 +3,7 @@ from config import config
 from preprocessing import preprocessor as pp
 from models.logistic_model import LogisticModel
 from utils import utils
+from train import train_funcs as tf
 
 
 def training_pipeline(path):
@@ -21,9 +22,12 @@ def training_pipeline(path):
 
 def run_training(opts):
     df = training_pipeline(opts.source)
-    lr = LogisticModel(max_iter=1000)
-    lr.fit(df[config.FEATURES], df[config.TARGET])
-    lr.save_model(opts.destination)
+
+    preds = tf.model_train(df, features=config.FEATURES, target=config.TARGET,
+                           split=True, params=config.PARAMS_LOGISTIC)
+
+    tf.model_train(df, features=config.FEATURES, target=config.TARGET,
+                   split=False, params=config.PARAMS_LOGISTIC, path=opts.destination)
 
 
 if __name__ == '__main__':
