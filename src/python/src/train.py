@@ -24,10 +24,10 @@ def run_training(opts):
     df = training_pipeline(opts.source)
 
     preds = tf.model_train(df, features=config.FEATURES, target=config.TARGET,
-                           split=True, params=config.PARAMS_LOGISTIC)
+                           split='true', params=config.PARAMS_LOGISTIC)
 
     tf.model_train(df, features=config.FEATURES, target=config.TARGET,
-                   split=False, params=config.PARAMS_LOGISTIC, path=opts.destination)
+                   split='false', params=config.PARAMS_LOGISTIC, path=opts.destination)
 
 
 if __name__ == '__main__':
