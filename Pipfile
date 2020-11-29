@@ -7,7 +7,6 @@ verify_ssl = true
 jupyterlab = "*"
 matplotlib = "*"
 seaborn = "*"
-pytest = "*"
 
 [packages]
 pandas = "*"
@@ -15,6 +14,7 @@ numpy = "*"
 lightgbm = "*"
 tensorflow = "*"
 sklearn = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
