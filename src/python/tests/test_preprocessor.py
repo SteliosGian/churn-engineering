@@ -8,7 +8,6 @@ from preprocessing import preprocessor as pp
 from config import config
 
 
-
 @pytest.fixture()
 def get_data():
     return pd.read_csv('tests/resources/sample_df.csv')

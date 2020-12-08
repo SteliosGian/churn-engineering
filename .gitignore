@@ -1,7 +1,8 @@
-src/python/src/datasets/
+src/python/src/data/
 src/python/src/notebooks/
 src/python/src/encodings/
 src/python/src/trained_models/
+docs/
 .idea
 *.pyc
 src/python/.cache
