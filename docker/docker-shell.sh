@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Get argument for either training/prediction/both
-ARG=${1: train}
+# Get argument for either training/prediction/both (default: both)
+ARG=${1-both}
 
 usage ()
 {
