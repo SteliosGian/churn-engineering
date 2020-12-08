@@ -3,8 +3,21 @@
 # Get argument for either training/prediction/both
 ARG=${1: train}
 
+usage ()
+{
+  echo -e "\nUsage: $0 [arguments] \n"
+  echo "Argument should be either 'train', 'predict', or 'both'."
+  echo "train: Run the training pipeline and save the trained model."
+  echo "predict: Run the predict pipeline and save the predictions.csv."
+  echo "both: Run both the training and the predictions pipeline. This saves the model and the predictions.csv."
+  echo "NOTE: To run the 'train', the trained model needs to exist in the 'trained_models' directory."
+  exit
+}
+
 # Build docker
 docker build -t churn -f docker/Dockerfile .
+
+# Run docker train/predict/both
 if [[ $ARG == "train" ]]
 then
   echo "Running training"
@@ -36,6 +49,7 @@ elif [[ $ARG == 'both' ]]
    -v ${PWD}/src/python/src/trained_models:/usr/src/app/src/trained_models \
    -v ${PWD}/src/python/src/data:/usr/src/app/src/predictions \
    churn \
-   /bin/bash \
-   ./docker-entrypoint-prediction.sh
+   /bin/bash ./docker-entrypoint-prediction.sh
+else
+  usage
 fi
