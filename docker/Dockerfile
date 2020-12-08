@@ -18,4 +18,4 @@ COPY ./docker/docker-entrypoint-prediction.sh .
 COPY ./docker/docker-entrypoint-training.sh .
 COPY ./docker/settings.sh .
 
-RUN pytest tests/test_preprocessor.py
+#RUN pytest tests/test_preprocessor.py
