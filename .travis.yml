@@ -10,12 +10,11 @@ before_install:
   - docker build -t churn -f docker/Dockerfile .
   - docker ps -a
   - python --version
+
+install:
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
-
-install:
-  - pip install "[.test]" .
 script: pytest tests/
 after_success:
   - -codecov
