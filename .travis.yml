@@ -16,7 +16,7 @@ install:
   - pipenv install
   - pip install codecov
 
-script: cd src/python; pytest src/python/tests/
+script: cd src/python; pytest tests/
 
 after_success:
   - codecov
