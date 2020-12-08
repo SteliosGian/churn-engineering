@@ -58,4 +58,5 @@ def test_remove_na(get_data, col=['TotalCharges']):
 
 def test_encode_target(get_data):
     df = pp.encode_target(get_data, target=config.TARGET)
-    assert ptypes.is_bool_dtype(df[config.TARGET]), "Target variable is not bool type"
+    #assert ptypes.is_bool_dtype(df[config.TARGET]), "Target variable is not bool type"
+    assert ptypes.is_string_dtype(df[config.TARGET]), "Target variable is not bool type"

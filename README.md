@@ -10,15 +10,15 @@ Note: This repo will be used for testing different technologies.
 ## Getting Started
 
 To run the project, you need to clone this repo and run the docker/docker-shell.sh script.
-```shell
+```Bash
 ./docker/docker-shell.sh
 ```
 Make sure the script has the adequate permissions
-```shell
+```Bash
 chmod +x docker/docker-shell.sh
 ```
 or run
-```shell
+```Bash
 bash docker/docker-shell.sh
 ```
 
