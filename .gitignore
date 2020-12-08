@@ -1,7 +1,8 @@
-src/python/src/data/
+src/python/src/data/*.csv
+src/python/src/data/*.zip
 src/python/src/notebooks/
 src/python/src/encodings/
-src/python/src/trained_models/
+src/python/src/trained_models/model
 docs/
 .idea
 *.pyc
