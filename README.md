@@ -1,5 +1,7 @@
 # Customer Churn - Engineering
 
+[![Build Status](https://travis-ci.com/SteliosGian/churn-engineering.svg?branch=master)](https://travis-ci.com/SteliosGian/churn-engineering)
+
 The main purpose of this project, is to focus on the engineering 
 part and not so on the modelling part. We will create efficient data pipelines and
 will adhere to coding best practices using different tools, languages, and technologies like
