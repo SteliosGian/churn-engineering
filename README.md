@@ -42,7 +42,7 @@ TBC
 <ul>
     <li>Docker &#9745; </li>
     <li>Shell scripts &#9745; </li>
-    <li>TravisCI  </li>
+    <li>TravisCI &#9745;</li>
     <li>MLFlow  </li>
     <li>Spark  </li>
     <li>API  </li>
