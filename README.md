@@ -11,18 +11,31 @@ Note: This repo will be used for testing different technologies.
 
 ## Getting Started
 
-To run the project, you need to clone this repo and run the docker/docker-shell.sh script.
+To run the project, you need to clone this repo and run the docker/docker-compose-shell.sh script.
+
+This script runs the train, predict, or both phases. To run only the train phase, 
+include the argument "train" to the script. For the predict phase, add "predict",
+and for both, either run it with no arguments or add "both".
+
 ```Bash
-./docker/docker-shell.sh
+./docker/docker-compose-shell.sh
 ```
 Make sure the script has the adequate permissions
 ```Bash
-chmod +x docker/docker-shell.sh
+chmod +x docker/docker-compose-shell.sh
 ```
 or run
 ```Bash
-bash docker/docker-shell.sh
+bash docker/docker-compose-shell.sh
 ```
+
+### MLFlow Server
+
+The project starts a local MLFlow server running in the background, which you can access at
+http://127.0.0.1:5000/ <br>
+With <a href="https://mlflow.org/" target="_blank">MLFlow</a>, you can track custom metrics and hyperparameters as well as log artifacts such as plots and models.
+
+![mlflow_gif.gif](mlflow_gif.gif)
 
 ### Prerequisites
 
@@ -43,7 +56,7 @@ TBC
     <li>Docker &#9745; </li>
     <li>Shell scripts &#9745; </li>
     <li>TravisCI &#9745;</li>
-    <li>MLFlow  </li>
+    <li>MLFlow &#9745;</li>
     <li>Spark  </li>
     <li>API  </li>
 </ul>

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+###########################################
+######### DEPRECATED - Don't use! #########
+###########################################
+
 # Get argument for either training/prediction/both (default: both)
 ARG=${1-both}
 
