@@ -33,6 +33,10 @@ PARAMS_LOGISTIC = {'max_iter':  1000,
                    'C':         1.0,
                    'solver':   'lbfgs'}
 
+SCORING_CV = {'accucary':  'accuracy',
+              'precision': 'precision',
+              'recall':    'recall'}
+
 ########################################
 ############# Predict Config ###########
 ########################################

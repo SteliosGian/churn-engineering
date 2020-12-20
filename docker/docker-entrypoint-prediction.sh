@@ -13,7 +13,7 @@ cd "$APP_DIR"
 echo "Creating predictions directory"
 mkdir -p "${PREDICTION_OUTPUT_PATH}"
 
-echo "Executing training"
+echo "Executing prediction"
 python src/predict.py \
        --source ${TRAINING_DATA_PATH} \
        --model_source ${MODELS_DIR}model \
