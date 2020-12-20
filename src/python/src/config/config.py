@@ -6,6 +6,8 @@ ENCODINGS_PATH = 'src/encodings'
 
 DATASET_PATH = 'datasets/telco_churn.csv'
 
+PLOTS_PATH = 'src/plots'
+
 FEATURES = ['gender', 'SeniorCitizen', 'Partner', 'Dependents',
             'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
             'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
