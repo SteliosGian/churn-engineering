@@ -18,7 +18,7 @@ usage ()
 docker-compose -f docker/docker-compose.yml build
 
 # Start mlflow server
-docker-compose -f docker/docker-compose.yml run -d mlflow-server
+docker-compose -f docker/docker-compose.yml up -d mlflow-server
 
 # Run docker train/predict/both
 if [[ $ARG == "train" ]]

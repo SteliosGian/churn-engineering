@@ -6,4 +6,7 @@ RUN pip install -U pip
 
 RUN pip install mlflow
 
+COPY ./docker/docker-mlflow-entrypoint.sh .
+COPY ./docker/settings.sh .
+
 EXPOSE 5000

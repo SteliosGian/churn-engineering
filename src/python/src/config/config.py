@@ -26,7 +26,7 @@ TARGET = 'Churn'
 ############# Train Config #############
 ########################################
 
-TRACKING_URI = "http://0.0.0.0:5000/"
+TRACKING_URI = "tracking"
 
 PARAMS_LOGISTIC = {'max_iter':  1000,
                    'penalty':  'l2',

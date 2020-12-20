@@ -4,6 +4,8 @@ from preprocessing import preprocessor as pp
 from models.logistic_model import LogisticModel
 from utils import utils
 from train import train_funcs as tf
+import mlflow
+from sklearn.metrics import recall_score, precision_score
 
 
 def training_pipeline(path):
@@ -23,8 +25,20 @@ def training_pipeline(path):
 def run_training(opts):
     df = training_pipeline(opts.source)
 
-    preds = tf.model_train(df, features=config.FEATURES, target=config.TARGET,
+    preds, y_test = tf.model_train(df, features=config.FEATURES, target=config.TARGET,
                            split='true', params=config.PARAMS_LOGISTIC)
+    recall = recall_score(y_test, preds)
+    precision = precision_score(y_test, preds)
+
+    print("START MLFLOW")
+    mlflow.set_tracking_uri(config.TRACKING_URI)
+    mlflow.set_experiment("Test experiment")
+
+    with mlflow.start_run():
+        mlflow.log_metric('recall', recall)
+        mlflow.log_metric('precision', precision)
+        # mlflow.log_artifact('src/plots/probability_dist_20201112_0837.png')
+        # mlflow.lightgbm.log_model(model, 'src/trained_models')
 
     tf.model_train(df, features=config.FEATURES, target=config.TARGET,
                    split='false', params=config.PARAMS_LOGISTIC, path=opts.destination)

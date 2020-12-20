@@ -11,7 +11,7 @@ def model_train(df: pd.DataFrame, features: list, target: str,
         model = LogisticModel(**params)
         model.fit(X_train, y_train)
         preds = model.predict(X_test)
-        return preds
+        return preds, y_test
     elif split=='false':
         model = LogisticModel(**params)
         model.fit(df[features], df[target])
