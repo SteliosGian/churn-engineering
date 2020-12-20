@@ -1,11 +1,13 @@
 version: '3'
 services:
   ml-model:
+    restart: always
     container_name: ml-model
     build:
       context: ../
       dockerfile: docker/Dockerfile
   mlflow-server:
+    restart: always
     container_name: mlflow-server
     build:
       context: ../
@@ -15,3 +17,5 @@ services:
     ports:
       - "5000:5000"
     command: mlflow server --host 0.0.0.0
+    volumes:
+      - "../mlruns:/usr/src/app/mlruns"
