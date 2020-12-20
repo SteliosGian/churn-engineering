@@ -25,17 +25,18 @@ def run_training(opts):
     model = tf.model_create(params=config.PARAMS_LOGISTIC)
 
     scores, preds_proba, preds = tf.model_evaluate(df, features=config.FEATURES, target=config.TARGET,
-                               metrics=config.SCORING_CV, model=model, cv_rounds=5)
+                                                   metrics=config.SCORING_CV, model=model, cv_rounds=5)
 
     tf.plot_prob_hist(predictions=preds_proba, plot_path=config.PLOTS_PATH)
 
     tf.plot_conf_matrix(df, target=config.TARGET, predictions=preds, plot_path=config.PLOTS_PATH)
 
-    tf.log_metrics(metrics=scores, params=config.PARAMS_LOGISTIC, tracking_uri=config.TRACKING_URI, models_path=opts.destination,
-                   plot_path=config.PLOTS_PATH, round_dec=3)
-
     tf.model_train(model=model, df=df, features=config.FEATURES,
                    target=config.TARGET, path=opts.destination)
+
+    tf.log_metrics(metrics=scores, params=config.PARAMS_LOGISTIC, tracking_uri=config.TRACKING_URI,
+                   models_path=opts.destination,
+                   plot_path=config.PLOTS_PATH, round_dec=3)
 
 
 if __name__ == '__main__':
