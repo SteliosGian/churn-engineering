@@ -3,6 +3,11 @@
 # Get argument for either training/prediction/both (default: both)
 ARG=${1-both}
 
+# File paths
+TRAINING_ENTRYPOINT=./docker-entrypoint-training.sh
+PREDICTION_ENTRYPOINT=./docker-entrypoint-prediction.sh
+DOCKER_COMPOSE_PATH=docker/docker-compose.yml
+
 usage ()
 {
   echo -e "\nUsage: $0 [arguments] \n"
@@ -15,39 +20,39 @@ usage ()
 }
 
 # Build docker
-docker-compose -f docker/docker-compose.yml build
+docker-compose -f ${DOCKER_COMPOSE_PATH} build
 
 # Start mlflow server
-docker-compose -f docker/docker-compose.yml up -d mlflow-server
+docker-compose -f ${DOCKER_COMPOSE_PATH} up -d mlflow-server
 
 # Run docker train/predict/both
 if [[ $ARG == "train" ]]
 then
   echo "Running training"
   docker-compose \
-  -f docker/docker-compose.yml \
+  -f ${DOCKER_COMPOSE_PATH} \
   run ml-model \
-  /bin/bash ./docker-entrypoint-training.sh
+  /bin/bash ${TRAINING_ENTRYPOINT}
 elif [[ $ARG == 'predict' ]]
  then
    echo "Running prediction"
    docker-compose \
-   -f docker/docker-compose.yml \
+   -f ${DOCKER_COMPOSE_PATH} \
    run ml-model \
-   /bin/bash ./docker-entrypoint-prediction.sh
+   /bin/bash ${PREDICTION_ENTRYPOINT}
 elif [[ $ARG == 'both' ]]
  then
    echo "Running both training and prediction"
    echo "Running training"
    docker-compose \
-   -f docker/docker-compose.yml \
+   -f ${DOCKER_COMPOSE_PATH} \
    run ml-model \
-   /bin/bash ./docker-entrypoint-training.sh
+   /bin/bash ${TRAINING_ENTRYPOINT}
    echo "Running prediction"
    docker-compose \
-   -f docker/docker-compose.yml \
+   -f ${DOCKER_COMPOSE_PATH} \
    run ml-model \
-   /bin/bash ./docker-entrypoint-prediction.sh
+   /bin/bash ${PREDICTION_ENTRYPOINT}
 else
   usage
 fi

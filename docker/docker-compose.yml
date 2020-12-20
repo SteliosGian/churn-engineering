@@ -10,7 +10,8 @@ services:
       - "../src/python/src/trained_models:/usr/src/app/src/trained_models"
       - "../src/python/src/data:/usr/src/app/src/predictions"
       - "../tracking:/usr/src/app/tracking"
-    depends_on: mlflow-server
+    depends_on:
+      - mlflow-server
   mlflow-server:
     restart: always
     container_name: mlflow-server
