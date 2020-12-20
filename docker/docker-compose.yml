@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ml-model:
+    container_name: ml-model
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+  mlflow-server:
+    container_name: mlflow-server
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.mlflow
+    expose:
+      - "5000"
+    ports:
+      - "5000:5000"
+    command: mlflow server --host 0.0.0.0
