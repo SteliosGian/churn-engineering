@@ -3,6 +3,8 @@
 # Get argument for either training/prediction/both (default: both)
 ARG=${1-both}
 
+echo "Running ${ARG}"
+
 # File paths
 TRAINING_ENTRYPOINT=./docker-entrypoint-training.sh
 PREDICTION_ENTRYPOINT=./docker-entrypoint-prediction.sh
