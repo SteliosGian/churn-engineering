@@ -11,6 +11,13 @@ Note: This repo will be used for testing different technologies.
 
 ## Getting Started
 
+The dataset for this project is taken from <a href="https://www.kaggle.com/blastchar/telco-customer-churn" target="_blank">Kaggle</a>. 
+It is a simple dataset regarding customer churn including
+both numeric and categorical features. It is a classification task with the target variable being binary (True/False),
+meaning that if a customer has left the company, the target variable is True/1, otherwise it is False/0.
+
+It is necessary to save the csv file from Kaggle to the <b>"data"</b> (src/python/src/data/) directory in order for the pipeline to work.
+
 To run the project, you need to clone this repo and run the docker/docker-compose-shell.sh script.
 
 This script runs the train, predict, or both phases. To run only the train phase, 
@@ -42,6 +49,8 @@ as well as log artifacts such as plots and models.
 
 <a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. 
 Otherwise, it can be executed by running the python scripts (train.py/predict.py) individually.
+
+
 
 
 ### Installing
