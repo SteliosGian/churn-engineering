@@ -51,7 +51,8 @@ It is a simple dataset regarding customer churn including
 both numeric and categorical features. It is a classification task with the target variable being binary (True/False),
 meaning that if a customer has left the company, the target variable is True/1, otherwise it is False/0.
 
-It is necessary to save the csv file from Kaggle to the <b>"data"</b> (src/python/src/data/) directory in order for the pipeline to work.
+It is necessary to save the csv file from Kaggle to the <b>"data"</b> (src/python/src/data/) directory
+renaming it as "telco_churn.csv" in order for the pipeline to work.
 
 To run the project, you need to clone this repo and run the docker/docker-compose-shell.sh script.
 

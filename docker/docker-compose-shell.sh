@@ -17,7 +17,7 @@ usage ()
   echo "train: Run the training pipeline and save the trained model."
   echo "predict: Run the predict pipeline and save the predictions.csv."
   echo "both: Run both the training and the predictions pipeline. This saves the model and the predictions.csv."
-  echo "NOTE: To run the 'train', the trained model needs to exist in the 'trained_models' directory."
+  echo "NOTE: To run the 'predict', the trained model needs to exist in the 'trained_models' directory."
   exit
 }
 
