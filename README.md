@@ -16,9 +16,8 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#MLflow Server">MLflow Server</a></li>
+        <li><a href="#mlflow-server">MLflow Server</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -92,10 +91,6 @@ as well as log artifacts such as plots and models.
 <a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. 
 Otherwise, it can be executed by running the python scripts (train.py/predict.py) individually.
 
-
-### Installing
-
-TBC
 
 ## Roadmap
 <ul>
