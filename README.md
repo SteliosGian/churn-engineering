@@ -39,7 +39,7 @@ With <a href="https://mlflow.org/" target="_blank">MLFlow</a>, you can track cus
 
 ### Prerequisites
 
-Docker must be installed in order to run the project with Docker. Otherwise, it can be ran
+<a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. Otherwise, it can be ran
 by running the python scripts (train.py/predict.py) individually.
 
 
