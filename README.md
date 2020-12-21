@@ -32,15 +32,16 @@ bash docker/docker-compose-shell.sh
 ### MLFlow Server
 
 The project starts a local MLFlow server running in the background, which you can access at
-http://127.0.0.1:5000/ <br>
-With <a href="https://mlflow.org/" target="_blank">MLFlow</a>, you can track custom metrics and hyperparameters as well as log artifacts such as plots and models.
+http://127.0.0.1:5000/ . <br>
+With <a href="https://mlflow.org/" target="_blank">MLFlow</a>, you can track custom metrics and hyperparameters 
+as well as log artifacts such as plots and models.
 
 ![mlflow_gif.gif](mlflow_gif.gif)
 
 ### Prerequisites
 
-<a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. Otherwise, it can be ran
-by running the python scripts (train.py/predict.py) individually.
+<a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. 
+Otherwise, it can be executed by running the python scripts (train.py/predict.py) individually.
 
 
 ### Installing
