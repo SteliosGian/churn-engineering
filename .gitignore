@@ -1,8 +1,10 @@
 src/python/src/data/*.csv
 src/python/src/data/*.zip
 src/python/src/notebooks/
-src/python/src/encodings/
+src/python/src/encodings/*.npy
 src/python/src/trained_models/model
+tracking/
+!tracking/.gitkeep
 docs/
 .idea
 *.pyc

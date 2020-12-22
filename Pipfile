@@ -5,8 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 jupyterlab = "*"
-matplotlib = "*"
-seaborn = "*"
 
 [packages]
 pandas = "*"
@@ -15,6 +13,9 @@ lightgbm = "*"
 tensorflow = "*"
 sklearn = "*"
 pytest = "*"
+mlflow = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.7"
