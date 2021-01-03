@@ -1,12 +1,15 @@
 package spark
 
-import java.util.Properties
+//import java.util.Properties
 
-class sparkConfig(private val props: Properties) extends Properties {
+class sparkConfig {
 
-  val dataPath = "src/main/python/src/data/telco_churn.csv"
+  // Path of the CSV file
+  val dataPath: String = "src/main/python/src/data/telco_churn.csv"
 
-  val appName = "sparkSQL"
+  // Spark app name
+  val appName: String = "sparkSQL"
 
-  val saveData = "src/main/python/src/data/parquet"
+  // Path to save the parquet data
+  val saveData: String = "src/main/python/src/data/parquet"
 }

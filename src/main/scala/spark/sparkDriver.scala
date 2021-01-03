@@ -4,7 +4,7 @@ import org.apache.spark.sql._
 
 object sparkDriver {
   def main(args: Array[String]): Unit = {
-    implicit val config: sparkConfig = new sparkConfig(System.getProperties)
+    implicit val config: sparkConfig = new sparkConfig
 
     implicit val sparkSession: SparkSession = SparkSession
           .builder
