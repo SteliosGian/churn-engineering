@@ -14,3 +14,5 @@ customer_churn.iml
 target/
 .project
 build.log
+.bsp
+project/target/
