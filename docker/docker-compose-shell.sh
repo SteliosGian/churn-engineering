@@ -8,6 +8,7 @@ echo "Running ${ARG}"
 # File paths
 TRAINING_ENTRYPOINT=./docker-entrypoint-training.sh
 PREDICTION_ENTRYPOINT=./docker-entrypoint-prediction.sh
+SPARK_ENTRYPOINT=./docker-entrypoint-spark.sh
 DOCKER_COMPOSE_PATH=docker/docker-compose.yml
 
 usage ()
@@ -26,6 +27,13 @@ docker-compose -f ${DOCKER_COMPOSE_PATH} build
 
 # Start mlflow server
 docker-compose -f ${DOCKER_COMPOSE_PATH} up -d mlflow-server
+
+
+echo "Running Spark"
+docker-compose \
+  -f ${DOCKER_COMPOSE_PATH} \
+  run spark \
+  /bin/bash ${SPARK_ENTRYPOINT}
 
 # Run docker train/predict/both
 if [[ $ARG == "train" ]]

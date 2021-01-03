@@ -10,9 +10,11 @@ services:
       - "../src/main/python/src/trained_models:/usr/src/app/src/trained_models"
       - "../src/main/python/src/data:/usr/src/app/src/predictions"
       - "../src/main/python/src/encodings:/usr/src/app/src/encodings"
+      - "../src/main/python/src/data:/usr/src/app/src/data"
       - "../tracking:/usr/src/app/tracking"
     depends_on:
       - mlflow-server
+      - spark
   mlflow-server:
     restart: always
     container_name: mlflow-server
@@ -26,3 +28,11 @@ services:
     volumes:
       - "../tracking:/usr/src/app/tracking"
     command: mlflow server --backend-store-uri ./tracking --port 5000 --host 0.0.0.0
+  spark:
+    restart: always
+    container_name: spark
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.spark
+    volumes:
+      - "../src/main/python/src/data:/usr/src/app/src/main/python/src/data"

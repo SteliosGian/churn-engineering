@@ -1,6 +1,16 @@
 import pandas as pd
 import pickle
+import os
 
+
+# def read_dataset(path: str):
+#     """
+#     Read dataset
+#     :param path: Path of the dataset
+#     :return: Dataframe
+#     """
+#     df = pd.read_csv(path)
+#     return df
 
 def read_dataset(path: str):
     """
@@ -8,8 +18,10 @@ def read_dataset(path: str):
     :param path: Path of the dataset
     :return: Dataframe
     """
-    df = pd.read_csv(path)
-    return df
+    for file in os.listdir(path):
+        if file.endswith(".parquet"):
+            df = pd.read_parquet(os.path.join(path, file), engine='pyarrow')
+            return df
 
 
 def load_model(path: str):

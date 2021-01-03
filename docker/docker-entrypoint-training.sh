@@ -13,6 +13,7 @@ cd "$APP_DIR"
 echo "Creating models directory"
 mkdir -p "${MODELS_DIR}"
 
+
 echo "Executing training"
 python src/train.py \
        --source ${TRAINING_DATA_PATH} \

@@ -9,6 +9,7 @@ RUN pip install pipenv
 COPY Pipfile .
 COPY Pipfile.lock .
 RUN pipenv install --system
+#RUN pipenv install
 
 # Copy project files
 COPY ./src/main/python/ .
