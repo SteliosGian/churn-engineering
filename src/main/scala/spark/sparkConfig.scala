@@ -1,6 +1,5 @@
 package spark
 
-//import java.util.Properties
 
 class sparkConfig {
 

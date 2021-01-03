@@ -37,7 +37,6 @@ RUN curl -sL --retry 3 \
  && mv /usr/$SPARK_PACKAGE $SPARK_HOME \
  && chown -R root:root $SPARK_HOME
 
-COPY target/ target/
 COPY src/main/scala src/main/scala
 COPY src/test/ src/test/
 COPY src/main/python/src/data/ src/main/python/src/data/
