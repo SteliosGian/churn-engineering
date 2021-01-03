@@ -1,5 +1,6 @@
 src/main/python/src/data/*.csv
 src/main/python/src/data/*.zip
+src/main/python/src/data/parquet/
 src/main/python/src/notebooks/
 src/main/python/src/encodings/*.npy
 src/main/python/src/trained_models/model
