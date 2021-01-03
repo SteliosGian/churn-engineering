@@ -11,7 +11,7 @@ COPY Pipfile.lock .
 RUN pipenv install --system
 
 # Copy project files
-COPY ./src/python/ .
+COPY ./src/main/python/ .
 
 # Copy docker shell scripts
 COPY ./docker/docker-entrypoint-prediction.sh .
