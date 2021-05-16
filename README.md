@@ -94,7 +94,7 @@ as well as log artifacts such as plots and models.
 Otherwise, it can be executed by running the python scripts (train.py/predict.py) individually.
 
 ### Notes
-<a href="https://spark.apache.org/" target="_blank">Spark</a> is not needed for this project because the amount of data is not that large. However, a small pipeline is created in the branch "spark" using <a href="https://www.scala-lang.org/" target="_blank">Scala</a>
+<a href="https://spark.apache.org/" target="_blank">Spark</a> is not needed for this project because the amount of data is not that large. However, a small pipeline is created in the branch "spark" using <a href="https://www.scala-lang.org/" target="_blank">Scala</a>.
 
 
 ## Roadmap
