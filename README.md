@@ -18,6 +18,7 @@
       <ul>
         <li><a href="#mlflow-server">MLflow Server</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#notes">Notes</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -92,6 +93,9 @@ as well as log artifacts such as plots and models.
 <a href="https://www.docker.com/" target="_blank">Docker</a> must be installed in order to run the project with Docker. 
 Otherwise, it can be executed by running the python scripts (train.py/predict.py) individually.
 
+### Notes
+
+<a href="https://spark.apache.org/" target="_blank">Spark</a> is not needed for this project because the amount of data is not that large.
 
 ## Roadmap
 <ul>
@@ -99,7 +103,7 @@ Otherwise, it can be executed by running the python scripts (train.py/predict.py
     <li>Shell scripts &#9745; </li>
     <li>TravisCI &#9745;</li>
     <li>MLflow &#9745;</li>
-    <li>Spark  </li>
+    <li>Spark &#9745;</li>
     <li>API  </li>
 </ul>
 
